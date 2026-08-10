@@ -1,11 +1,17 @@
-<h1>discover the world of music</h1>
-<p>quel est le nom du domaine (terrain, logements)<input/></p>
-<p>quel est le nom du domaine (reseau, adresse IP)<input/></p>
-<p>avec quoi utilises tu un "bow" ou (arc-het) 
-<label><input type="radio"/>violon</label>
-<label><input type="radio"/>arrow (fleche)</label>
-</p>
-<p>quels adresses IP sont amis/copines/se parle<textarea></textarea></p>
-<p>quels personnes sont amis/copines/se parle<textarea></textarea></p>
+{% extends 'base.html' %}
 
+{% block montitre %}
+debut de mes mots: bienvenue dans mon domaine
+{% endblock %}
+{% block content %}
+<h1># discover-domain-music</h1>
+{% for x in users | reverse %}
+ <li>{{ x["first_name"]  }}</li>
 
+{% endfor %} 
+fin de mes mots : trouve y des chevaux, ponts, arcs , et loccasion de faire des rencontres ou de faire le début dune aventure
+{% endblock %}
+{% block liens %}
+<a href="/">welcome</a>
+{% endblock %}
+<a href="/add_one_domaine"> add one domaine</a><a href="/add_one_domaine_reseau"> add one domaine_reseau</a><a href="/add_one_appareil"> add one appareil</a><a href="/add_one_user"> add one user</a><a href="/add_one_conversation"> add one conversation</a><a href="/add_one_begin_adventure"> add one begin_adventure</a><a href="/add_one_country"> add one country</a><a href="/add_one_songtrack"> add one songtrack</a><a href="/add_one_adventurehassongtrack"> add one adventurehassongtrack</a><a href="/add_one_adventure_has_user"> add one adventure_has_user</a>
